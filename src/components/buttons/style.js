@@ -25,6 +25,14 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
   },
+  btnBlue: {
+    backgroundColor: '#8bdbe6',
+    borderRadius: 50,
+    marginTop: 10,
+    paddingHorizontal: 25,
+    height: 35,
+    justifyContent: 'center',
+  },
   btnGray: {
     backgroundColor: '#b8b9b9',
     borderRadius: 50,

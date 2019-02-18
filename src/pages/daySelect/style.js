@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   btnWrapper: {
-    alignItems: 'flex-end',
+    alignItems: 'stretch',
     marginTop: 40,
   },
 });

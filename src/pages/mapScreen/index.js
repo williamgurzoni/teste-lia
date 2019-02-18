@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { connect } from 'react-redux';
 
 import styles from './style';
 import Footer from '../../components/Footer';
+import { setLab } from '../../actions/AppAction';
 
-export default class MapScreen extends Component {
+class MapScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,19 +44,21 @@ export default class MapScreen extends Component {
     this.setState({ selectedItem: info.changed[0].key });
   }
   
-  handleItem = () => {
+  handleItem = async (item) => {
+    await this.props.setLab(item.Lab);
     this.props.navigation.navigate('Exam');
   }
 
   renderItem = ({ item }) => {
     let selectedItemStyle = null;
     let active = false;
+
     if (this.state.selectedItem === item.id) {
       selectedItemStyle = styles.selectedItem;
       active = true;
     } 
     return (
-      <TouchableWithoutFeedback onPress={() => this.handleItem()} >          
+      <TouchableWithoutFeedback onPress={() => this.handleItem(item)} >          
         <View style={[styles.item, selectedItemStyle]} >
           <View>
             <Text style={[{ color: '#2799fa' }, selectedItemStyle]}>
@@ -104,3 +108,16 @@ export default class MapScreen extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return ({
+    name: state.AppReducer.name,
+    lab: state.AppReducer.lab,
+  });
+};
+
+const mapDispatchToProps = {
+  setLab,
+};
+
+export default connect(mapStateToProps, { ...mapDispatchToProps })(MapScreen);

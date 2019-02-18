@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 export default class FaceRecognition extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.navigation.navigate('Welcome');
+    }, 10000);
   }
 
   render() {
     return (
-      <View>
-        <Text> FaceRecognition </Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
+        <Text> FaceRecognition {'\n '}react-native-camera</Text>
       </View>
     );
   }

@@ -8,6 +8,7 @@ import ActionScreen from './pages/actionScreen';
 import MapScreen from './pages/mapScreen';
 import ExamSelect from './pages/examSelect';
 import DaySelect from './pages/daySelect';
+import QrCode from './pages/qrCode';
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,9 +20,10 @@ const AppNavigator = createStackNavigator(
     Map: MapScreen,
     Exam: ExamSelect,
     Day: DaySelect,
+    QrCode,
   },
   {
-    initialRouteName: 'Welcome',
+    initialRouteName: 'Login',
     headerMode: 'none',
   },
 );

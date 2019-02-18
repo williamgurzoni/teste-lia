@@ -27,6 +27,12 @@ export const BtnBlueBig = (props) => (
   </View>
 );
 
+export const BtnBlue = (props) => (
+  <View style={styles.btnBlue} >
+    <Text style={styles.txtBlue} >{props.text}</Text>
+  </View>
+);
+
 export const BtnGreen = (props) => (
   <View style={styles.btnGreen} >
     <Text style={styles.txtGrey} >{props.text}</Text>
