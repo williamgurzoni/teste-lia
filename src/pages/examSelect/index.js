@@ -7,8 +7,6 @@ import Footer from '../../components/Footer';
 import styles from './style';
 import { setExam } from '../../actions/AppAction';
 
-const instructions = 'Ok Edgar, que exames você precisa agendar?';
-
 class ExamSelect extends Component {
 
   handleSelect = async (exam) => {
@@ -19,6 +17,7 @@ class ExamSelect extends Component {
   }
 
   render() {
+    const instructions = `Ok ${this.props.name}, que exames você precisa agendar?`;
     return (
       <View style={styles.container} >
 

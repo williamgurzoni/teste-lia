@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 import styles from './style';
 import { BtnRed, BtnWhite } from '../../components/buttons';
 
-const instructions = 'Por favor escolha se deseja entrar por' +
+const instructions = 'Por favor escolha se deseja entrar por ' +
 'reconhecimento facial ou pelo seu CPF?';
 
 export default class LoginMethod extends Component {

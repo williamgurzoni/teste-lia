@@ -5,7 +5,7 @@ export default class FaceRecognition extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.navigation.navigate('Welcome');
-    }, 10000);
+    }, 3000);
   }
 
   render() {
